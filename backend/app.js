@@ -11,6 +11,12 @@ app.use(express.json());
 const conn = require("./db/conn")
 conn();
 
+// Routes
+const routes = require('./routes/router');
+
+app.use('/api', routes);
+
+// Port
 const port = process.env.PORT || 3001;
 
 app.listen(port, function() {

@@ -1,0 +1,9 @@
+POST http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+    "name": "Algum serviço",
+    "description": "Alguma descrição",
+    "price": 14000,
+    "image": "https://img.freepik.com/fotos-gratis/amigos-tilintar-de-copos-de-bebida-em-um-bar-moderno_1150-18971.jpg"
+}
