@@ -2,8 +2,35 @@ POST http://localhost:3000/api/services
 Content-Type: application/json
 
 {
-    "name": "Algum serviço",
+    "name": "Algum serviço 2",
     "description": "Alguma descrição",
     "price": 14000,
+    "image": "https://img.freepik.com/fotos-gratis/amigos-tilintar-de-copos-de-bebida-em-um-bar-moderno_1150-18971.jpg"
+}
+
+###
+
+GET http://localhost:3000/api/services
+
+
+###
+
+GET http://localhost:3000/api/services/6407c0321de0b5a8216c9c35
+
+
+###
+
+DELETE http://localhost:3000/api/services/6407c2d5b2ba424c29b6e0bb
+
+
+###
+
+PUT http://localhost:3000/api/services/6407c0321de0b5a8216c9c36
+Content-Type: application/json
+
+{
+    "name": "Algum serviço Alterado",
+    "description": "Alguma descrição Alterado",
+    "price": 24000,
     "image": "https://img.freepik.com/fotos-gratis/amigos-tilintar-de-copos-de-bebida-em-um-bar-moderno_1150-18971.jpg"
 }

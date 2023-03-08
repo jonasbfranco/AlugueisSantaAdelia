@@ -1,4 +1,4 @@
-const { Service, ServiceModel } = require('../models/Service');
+const { Service: ServiceModel } = require('../models/Service');
 
 const serviceController = {
 
@@ -15,6 +15,78 @@ const serviceController = {
             
             res.status(201).json({response, msg: 'Serviço criado com sucesso!'});
             
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    getAll: async(req, res) => {
+        try {
+            const services = await ServiceModel.find();
+        
+            res.status(200).json({services, msg: 'Serviços encontrados com sucesso!'});
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    
+    getById: async(req, res) => {
+        try {
+            const id = req.params.id;
+            const service = await ServiceModel.findById(id);
+
+            if(!service) {
+                res.status(404).json({msg: 'Serviço não encontrado.'});
+                return;
+            }
+            
+            res.status(200).json({service, msg: 'Serviço encontrado com sucesso!'});
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    delete: async(req, res) => {
+        try {
+            const id = req.params.id;
+            const service = await ServiceModel.findById(id);
+
+            if(!service) {
+                res.status(404).json({msg: 'Serviço não encontrado.'});
+                return;
+            }
+
+            const deleteService = await ServiceModel.findByIdAndDelete(id);
+
+            res.status(200).json({deleteService, msg: 'Serviço excluído com sucesso'});
+
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    update: async(req, res) => {
+        try {
+            const id = req.params.id;
+
+            const service = {
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                image: req.body.image,
+            }; 
+
+
+            const updateService = await ServiceModel.findByIdAndUpdate(id, service);
+
+            if(!updateService) {
+                res.status(404).json({msg: 'Serviço não encontrado.'});
+                return;
+            }
+
+            res.status(200).json({service, msg: 'Serviço atualizado com sucesso'});
+
+
         } catch (error) {
             console.log(error);
         }
