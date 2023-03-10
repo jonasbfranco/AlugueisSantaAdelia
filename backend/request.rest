@@ -34,3 +34,48 @@ Content-Type: application/json
     "price": 24000,
     "image": "https://img.freepik.com/fotos-gratis/amigos-tilintar-de-copos-de-bebida-em-um-bar-moderno_1150-18971.jpg"
 }
+
+
+
+###
+
+// PARTIES
+
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Meu evento",
+    "author": "Jonas",
+    "description": "Uma festa da firma",
+    "budget": 9000,
+    "image": "https://img.freepik.com/fotos-gratis/amigos-tilintar-de-copos-de-bebida-em-um-bar-moderno_1150-18971.jpg"
+}
+
+###
+
+
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Meu evento",
+    "author": "Jonas",
+    "description": "Uma festa da firma",
+    "budget": 3000,
+    "image": "https://img.freepik.com/fotos-gratis/amigos-tilintar-de-copos-de-bebida-em-um-bar-moderno_1150-18971.jpg",
+    "services": [
+        {
+            "name": "Algum serviço 2",
+            "description": "Alguma descrição",
+            "price": 3000,
+            "image": "https://img.freepik.com/fotos-gratis/amigos-tilintar-de-copos-de-bebida-em-um-bar-moderno_1150-18971.jpg"
+        },
+        {
+            "name": "Algum serviço 3",
+            "description": "Alguma descrição",
+            "price": 1600,
+            "image": "https://img.freepik.com/fotos-gratis/amigos-tilintar-de-copos-de-bebida-em-um-bar-moderno_1150-18971.jpg"
+        }
+    ]
+}
