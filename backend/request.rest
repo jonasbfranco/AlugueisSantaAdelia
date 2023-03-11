@@ -109,7 +109,7 @@ Content-Type: application/json
     "title": "Meu evento",
     "author": "Jonas",
     "description": "Uma festa da firma",
-    "budget": 3000,
+    "budget": 5000,
     "image": "https://img.freepik.com/fotos-gratis/amigos-tilintar-de-copos-de-bebida-em-um-bar-moderno_1150-18971.jpg",
     "services": [
         {
